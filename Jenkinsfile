@@ -6,5 +6,9 @@ pipeline {
                 git branch :'main', url: 'https://github.com/GoraDivya/newrepoistry/'
             }
         }
-    }       
+        stage ('unit test') {
+            steps {
+                sh 'mvn test'
+            }
+    }   }       
 }
