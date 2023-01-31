@@ -1,15 +1,11 @@
 pipeline {
-    agent any 
+    agent any
     stages {
-        stage ('check out') {
+        stage ('Git checkout') {
             steps {
-                git branch :'main', url: 'https://github.com/GoraDivya/newrepoistry/'
+                git branch: 'main', url: 'https://github.com/GoraDivya/newrepoistry.git'
             }
         }
-        stage ('UNIT testing') {
-            steps {
-                sh 'mvn test'
-            }
-        }   
-    }       
+    }
 }
+
